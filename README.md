@@ -11,4 +11,6 @@ rainbows :rainbow:
 
 ```bash
 $ npx rainbows
+Here are 5 rainbows for you!
+🌈🌈🌈🌈🌈
 ```
