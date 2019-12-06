@@ -15,9 +15,10 @@ jobs:
       run: npm ci
     - name: Test
       run: npm run test
-    - name: Publish to NPM
+    - name: Publish to Github Package Registry
       run: |
-        npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN 
+        npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+        npm login
         npm publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_PUBLISH_TOKEN }}
