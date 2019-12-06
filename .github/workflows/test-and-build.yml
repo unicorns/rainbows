@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm ci
     - name: Test
       run: |
         ./bin/run --version
