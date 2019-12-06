@@ -26,7 +26,7 @@ class Rainbows extends Command {
 
     const numRainbows = Math.min(Number(args.numRainbows) || getRandomInt(1, MAX_NUM_RAINBOWS + 1), MAX_NUM_RAINBOWS);
     this.log(`Here ${numRainbows > 1 ? 'are' : 'is'} ${numRainbows} rainbow${numRainbows > 1 ? 's' : ''} for you!`);
-    this.log('🦄'.repeat(numRainbows));
+    this.log('🌈'.repeat(numRainbows));
   }
 }
 
