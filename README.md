@@ -10,6 +10,5 @@ rainbows :rainbow:
 # Getting Started
 
 ```bash
-$ npm install rainbows
-$ rainbows
+$ npx rainbows
 ```
