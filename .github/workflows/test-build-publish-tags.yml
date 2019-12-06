@@ -1,4 +1,4 @@
-name: Test & Build
+name: Test & Build & Publish Tags
 
 on: [push]
 
@@ -18,9 +18,11 @@ jobs:
         ./bin/run --help
         npm run test
     - name: Publish
-      if: github.ref
-      run: |
-        npm publish
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Check if compilable (if publish did not execute)
+      if: ! startsWith(github.ref, 'refs/tags/v')
+      run: tsc -b
 
