@@ -17,9 +17,12 @@ jobs:
         ./bin/run --version
         ./bin/run --help
         npm run test
-    - name: Publish
+    - name: Publish to Github Package Registry
       if: startsWith(github.ref, 'refs/tags/v')
-      run: npm publish
+      run: |
+        # rainbows -> @unicorns/rainbows
+        awk 'NR==1,/"name": "rainbows"/{sub(/"name": "rainbows"/, "\"name\": \"@unicorns/rainbows\"")} 1' package.json
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Check if compilable (if publish did not execute)
