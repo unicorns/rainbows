@@ -13,7 +13,9 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
-        registry-url: https://npm.pkg.github.com/
+        node-version: 12
+        registry-url: https://npm.pkg.github.com
+        scope: '@unicorns'
     - name: Install dependencies
       run: npm ci
     - name: Test
