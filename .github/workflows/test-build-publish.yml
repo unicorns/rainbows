@@ -1,23 +1,23 @@
 name: Test & Build & Publish
 
- on:
-   release:
-     types: [published]
+on:
+  release:
+    types: [published]
 
- jobs:
-   build:
+jobs:
+  all:
 
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-     - uses: actions/checkout@v1
-     - name: Install dependencies
-       run: npm ci
-     - name: Test
-       run: npm run test
-     - name: Publish to NPM
-       run: |
-         npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN 
-         npm publish
-       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_PUBLISH_TOKEN }}
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm ci
+    - name: Test
+      run: npm run test
+    - name: Publish to NPM
+      run: |
+        npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN 
+        npm publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PUBLISH_TOKEN }}
