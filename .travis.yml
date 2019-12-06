@@ -1,11 +1,16 @@
 language: node_js
 node_js:
-  - node
-
+- node
 cache: npm
-
 script:
-  - ./bin/run --version
-  - ./bin/run --help
-  - npm run test
-
+- "./bin/run --version"
+- "./bin/run --help"
+- npm run test
+deploy:
+  provider: npm
+  email: benzhangniu@hotmail.com
+  api_key:
+    secure: sC6TDGVCYlgPhH2YoLbYF3pfuWatdfDQ8I/vII8I6z6ejzLSkM9zkpeohsyiobzNAkeriVYaSUaOAu/qygRjE419GZEt+Xhz7oLikqj0EBaZCxoWsKYymICHJIwZrGK2baFzCWnNUBm0WoEVQ3GW/ikjm4JuAO9wIevFEmD0suj75PjuxTTwxYuYHZA3eiM/7lTO0Q89pn/6Q1LkwYx0+tLc+Jx2GwU4hz0GpJ2kb5ckyYqksBBoPsbwjIk3vlheXUBk/yE8YHu1lIyGtCC9SNfFhOkwRBNBpuvh8dp82Q6gmWU69+74pXiLKBdR+0RAOQc+xyieg71zJ+bA3qB1oTRhm9SoY2JyWt40FR+WMTW4vSmkNuO6r4fcCTA5ieQQFJuSSEFDo5dJxCD7rlURPK5u/N47WNQ5JXU/ot+0BLI5XY+kRkyHGePYpgT7EJine7YYb6J21eC72gEuquhEf9z/AMSHLx+5IPdWPcRkkhs++o7ach2lAnv/JASyhG3fJEHvN+54Lu8yer++JkIeaDta2Plj+IhFn46IyBt6ZCB4CznmOxxBe1WcxfIF4FdFZd6vgv4lyHp9xpKtwn/y/CdYw3BSSJpLaXTC/GDJYk/DQx4wMexlvk6+3pACrc5UGXHJHGsEktHmfoQWZowpCgFEmYOmJmTt7LO4Je88KFY=
+  on:
+    tags: true
+    repo: Unicorns/rainbows
