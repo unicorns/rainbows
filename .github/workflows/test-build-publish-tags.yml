@@ -22,7 +22,7 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Check if compilable (if publish did not execute)
-      if: ! startsWith(github.ref, 'refs/tags/v')
-      run: tsc -b
+    # - name: Check if compilable (if publish did not execute)
+    #   if: ! startsWith(github.ref, 'refs/tags/v')
+    #   run: tsc -b
 
