@@ -4,11 +4,12 @@ on: [push]
 
 jobs:
   all:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        registry-url: https://npm.pkg.github.com
     - name: Install dependencies
       run: npm ci
     - name: Test
@@ -16,5 +17,10 @@ jobs:
         ./bin/run --version
         ./bin/run --help
         npm run test
-    - name: Compile TS to JS
-      run: tsc -b
+    - name: Publish
+      if: github.ref
+      run: |
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

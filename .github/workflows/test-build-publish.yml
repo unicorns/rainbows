@@ -1,9 +1,6 @@
 name: Test & Build & Publish
 
-on:
-  release:
-    types:
-      - created
+on: [push]
 
 jobs:
   all:
@@ -23,7 +20,8 @@ jobs:
     #   run: npm run test
     - name: Publish to Github Package Registry
       run: |
-        npm ci
-        npm publish
+        echo ref ${{ github.ref }} sha ${{ github.sha }} event ${{ github.event_name }} actor ${{ github.actor }}
+        # npm ci
+        # npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
