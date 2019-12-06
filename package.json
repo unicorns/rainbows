@@ -1,6 +1,6 @@
 {
   "name": "rainbows",
-  "version": "1.1.24",
+  "version": "1.1.25",
   "author": "@unicorns",
   "bin": {
     "rainbows": "./bin/run"
