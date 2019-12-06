@@ -1,5 +1,4 @@
-rainbows :rainbow:
-========
+# rainbows :rainbow:
 
 [![Build Status](https://travis-ci.org/unicorns/rainbows.svg?branch=master)](https://travis-ci.org/unicorns/rainbows)
 [![Version](https://img.shields.io/npm/v/rainbows)](https://npmjs.org/package/rainbows)
@@ -9,7 +8,7 @@ rainbows :rainbow:
 Outputs a random number (`1 <= n <= 1000`) of 🌈's when you execute the program. (Pretty much useless.)
 
 <!-- toc -->
-# Getting Started
+### Getting Started
 
 ```
 $ npx rainbows
@@ -21,6 +20,6 @@ Here is 1 rainbow for you!
 🌈
 ```
 
-# Contributing
+### Contributing
 
 Why?
