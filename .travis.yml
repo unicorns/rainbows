@@ -8,6 +8,7 @@ script:
 - "./bin/run --help"
 - npm run test
 deploy:
+  edge: true
   provider: npm
   email: benzhangniu@hotmail.com
   api_key:
