@@ -1,11 +1,11 @@
 {
   "name": "rainbows",
   "version": "1.1.11",
-  "author": "@Unicorns",
+  "author": "@unicorns",
   "bin": {
     "rainbows": "./bin/run"
   },
-  "bugs": "https://github.com/Unicorns/rainbows/issues",
+  "bugs": "https://github.com/unicorns/rainbows/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.13.3",
@@ -33,7 +33,7 @@
     "/bin",
     "/lib"
   ],
-  "homepage": "https://github.com/Unicorns/rainbows",
+  "homepage": "https://github.com/unicorns/rainbows",
   "keywords": [
     "rainbows"
   ],
@@ -42,7 +42,7 @@
   "oclif": {
     "bin": "rainbows"
   },
-  "repository": "Unicorns/rainbows",
+  "repository": "unicorns/rainbows",
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b",
