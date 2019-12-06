@@ -21,7 +21,8 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v')
       run: |
         # rainbows -> @unicorns/rainbows
-        awk 'NR==1,/"name": "rainbows"/{sub(/"name": "rainbows"/, "\"name\": \"@unicorns/rainbows\"")} 1' package.json > package.json
+        awk 'NR==1,/"name": "rainbows"/{sub(/"name": "rainbows"/, "\"name\": \"@unicorns/rainbows\"")} 1' package.json > package.json.new
+        mv package.json.new package.json
         npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
