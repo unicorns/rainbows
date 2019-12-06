@@ -17,7 +17,7 @@ jobs:
       run: npm run test
     - name: Publish to Github Package Registry
       run: |
-        npm config set registry //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+        npm config set registry https://npm.pkg.github.com/:_authToken $GITHUB_TOKEN
         npm login
         npm publish
       env:
